@@ -52,25 +52,25 @@ namespace lab1
             
             return 0;
         }
-        private Node RotateRR(Node parent)
+        private Node SmallLeft(Node parent)
         {
             
             return parent;
         }
-        private Node RotateLL(Node parent)
+        private Node SmallRight(Node parent)
         {
             
             return parent;
         }
-        private Node RotateLR(Node parent)
+        private Node BigRight(Node parent)
         {
             
-            return RotateLL(parent);
+            return SmallRight(parent);
         }
-        private Node RotateRL(Node parent)
+        private Node BigLeft(Node parent)
         {
             
-            return RotateRR(parent);
+            return SmallLeft(parent);
         }
     }
 

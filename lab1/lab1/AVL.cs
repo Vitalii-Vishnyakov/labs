@@ -34,38 +34,38 @@ namespace lab1
             else if (newItem.data < current.data)
             {
                 current.left = RecursiveInsert(current.left, newItem);
-                current = Balance_tree(current);
+                current = BalanceTree(current);
             }
             else if (newItem.data > current.data)
             {
                 current.right = RecursiveInsert(current.right, newItem);
-                current = Balance_tree(current);
+                current = BalanceTree(current);
             }
             return current;
         }
-        private Node Balance_tree(Node current)
+        private Node BalanceTree(Node current)
         {
-            int b_factor = Balance_factor(current);
+            int b_factor = BalanceRate(current);
             if (b_factor > 1)
             {
-                if (Balance_factor(current.left) > 0)
+                if (BalanceRate(current.left) > 0)
                 {
-                    current = RotateLL(current);
+                    current = SmallRight(current);
                 }
                 else
                 {
-                    current = RotateLR(current);
+                    current = BigRight(current);
                 }
             }
             else if (b_factor < -1)
             {
-                if (Balance_factor(current.right) > 0)
+                if (BalanceRate(current.right) > 0)
                 {
-                    current = RotateRL(current);
+                    current = BigLeft(current);
                 }
                 else
                 {
-                    current = RotateRR(current);
+                    current = SmallLeft(current);
                 }
             }
             return current;
@@ -85,15 +85,15 @@ namespace lab1
                 if (target < current.data)
                 {
                     current.left = Delete(current.left, target);
-                    if (Balance_factor(current) == -2)
+                    if (BalanceRate(current) == -2)
                     {
-                        if (Balance_factor(current.right) <= 0)
+                        if (BalanceRate(current.right) <= 0)
                         {
-                            current = RotateRR(current);
+                            current = SmallLeft(current);
                         }
                         else
                         {
-                            current = RotateRL(current);
+                            current = BigLeft(current);
                         }
                     }
                 }
@@ -101,15 +101,15 @@ namespace lab1
                 else if (target > current.data)
                 {
                     current.right = Delete(current.right, target);
-                    if (Balance_factor(current) == 2)
+                    if (BalanceRate(current) == 2)
                     {
-                        if (Balance_factor(current.left) >= 0)
+                        if (BalanceRate(current.left) >= 0)
                         {
-                            current = RotateLL(current);
+                            current = SmallRight(current);
                         }
                         else
                         {
-                            current = RotateLR(current);
+                            current = BigRight(current);
                         }
                     }
                 }
@@ -118,7 +118,7 @@ namespace lab1
                 {
                     if (current.right != null)
                     {
-                        //delete its inorder successor
+                        
                         parent = current.right;
                         while (parent.left != null)
                         {
@@ -126,13 +126,13 @@ namespace lab1
                         }
                         current.data = parent.data;
                         current.right = Delete(current.right, parent.data);
-                        if (Balance_factor(current) == 2)//rebalancing
+                        if (BalanceRate(current) == 2)//rebalancing
                         {
-                            if (Balance_factor(current.left) >= 0)
+                            if (BalanceRate(current.left) >= 0)
                             {
-                                current = RotateLL(current);
+                                current = SmallRight(current);
                             }
-                            else { current = RotateLR(current); }
+                            else { current = BigRight(current); }
                         }
                     }
                     else
@@ -231,38 +231,38 @@ namespace lab1
             }
             return height;
         }
-        private int Balance_factor(Node current)
+        private int BalanceRate(Node current)
         {
             int l = getHeight(current.left);
             int r = getHeight(current.right);
             int b_factor = l - r;
             return b_factor;
         }
-        private Node RotateRR(Node parent)
+        private Node SmallLeft(Node parent)
         {
             Node pivot = parent.right;
             parent.right = pivot.left;
             pivot.left = parent;
             return pivot;
         }
-        private Node RotateLL(Node parent)
+        private Node SmallRight(Node parent)
         {
             Node pivot = parent.left;
             parent.left = pivot.right;
             pivot.right = parent;
             return pivot;
         }
-        private Node RotateLR(Node parent)
+        private Node BigRight(Node parent)
         {
             Node pivot = parent.left;
-            parent.left = RotateRR(pivot);
-            return RotateLL(parent);
+            parent.left = SmallLeft(pivot);
+            return SmallRight(parent);
         }
-        private Node RotateRL(Node parent)
+        private Node BigLeft(Node parent)
         {
             Node pivot = parent.right;
-            parent.right = RotateLL(pivot);
-            return RotateRR(parent);
+            parent.right = SmallRight(pivot);
+            return SmallLeft(parent);
         }
     }
 }
