@@ -162,8 +162,8 @@ namespace lab1
 
             for (int i = 0; i < getHeight(root) ; i++)
             {
-                Console.Write(string.Concat(Enumerable.Repeat(" ", (4 - i) * 2)));
-                Console.WriteLine(arrForPrint[i]);
+                //Console.Write(string.Concat(Enumerable.Repeat(" ", (4 - i) * 2)));
+                //Console.WriteLine(arrForPrint[i]);
             }
 
             Console.WriteLine();
@@ -207,6 +207,12 @@ namespace lab1
             if (current != null)
             {
                 arrForPrint[currentHeight] += current.data.ToString() + "  ";
+                for (int i = 0; i < currentHeight; i++)
+                {
+                    Console.Write("-|");
+                }
+                Console.Write(current.data.ToString());
+                Console.WriteLine();
                 InOrderDisplayTree(current.left, currentHeight + 1);
                 InOrderDisplayTree(current.right, currentHeight + 1);
                 
