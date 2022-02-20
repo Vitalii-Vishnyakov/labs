@@ -206,7 +206,7 @@ namespace lab1
 
             if (current != null)
             {
-                arrForPrint[currentHeight] += current.data.ToString() + "  ";
+                
                 for (int i = 0; i < currentHeight; i++)
                 {
                     Console.Write("-|");
