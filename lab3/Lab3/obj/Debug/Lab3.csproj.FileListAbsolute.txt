@@ -1,0 +1,11 @@
+C:\Users\Unity\Desktop\см\Anton_RPS3-master\Anton_RPS3-master\Lab3\Lab3\bin\Debug\Lab3.exe.config
+C:\Users\Unity\Desktop\см\Anton_RPS3-master\Anton_RPS3-master\Lab3\Lab3\bin\Debug\Lab3.exe
+C:\Users\Unity\Desktop\см\Anton_RPS3-master\Anton_RPS3-master\Lab3\Lab3\bin\Debug\Lab3.pdb
+C:\Users\Unity\Desktop\см\Anton_RPS3-master\Anton_RPS3-master\Lab3\Lab3\obj\Debug\Lab3.csproj.AssemblyReference.cache
+C:\Users\Unity\Desktop\см\Anton_RPS3-master\Anton_RPS3-master\Lab3\Lab3\obj\Debug\Lab3.MainWindow.resources
+C:\Users\Unity\Desktop\см\Anton_RPS3-master\Anton_RPS3-master\Lab3\Lab3\obj\Debug\Lab3.Properties.Resources.resources
+C:\Users\Unity\Desktop\см\Anton_RPS3-master\Anton_RPS3-master\Lab3\Lab3\obj\Debug\Lab3.Table.resources
+C:\Users\Unity\Desktop\см\Anton_RPS3-master\Anton_RPS3-master\Lab3\Lab3\obj\Debug\Lab3.csproj.GenerateResource.cache
+C:\Users\Unity\Desktop\см\Anton_RPS3-master\Anton_RPS3-master\Lab3\Lab3\obj\Debug\Lab3.csproj.CoreCompileInputs.cache
+C:\Users\Unity\Desktop\см\Anton_RPS3-master\Anton_RPS3-master\Lab3\Lab3\obj\Debug\Lab3.exe
+C:\Users\Unity\Desktop\см\Anton_RPS3-master\Anton_RPS3-master\Lab3\Lab3\obj\Debug\Lab3.pdb

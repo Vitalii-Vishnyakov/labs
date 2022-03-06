@@ -27,7 +27,7 @@
             }
             return outputText;
         }
-        private bool IsLatin(char letter)
+        private bool IsEng(char letter)
         {
             if (AlphabetEng.IndexOf(char.ToLower(letter)) == SmthGoesWrong)
                 return false;
@@ -43,7 +43,7 @@
                 {
                     var isLowerCase = char.IsLower(lettersText[i]);
                     lettersText[i] = char.ToLower(lettersText[i]);
-                    if (IsLatin(lettersText[i]))
+                    if (IsEng(lettersText[i]))
                         if (isLowerCase)
                         {
                             result += EncryptDecrypt(lettersText[i], AlphabetEng, Reverse(AlphabetEng));
@@ -84,7 +84,7 @@
                 {
                     var isLowerCase = char.IsLower(lettersText[i]);
                     lettersText[i] = char.ToLower(lettersText[i]);
-                    if (IsLatin(lettersText[i]))
+                    if (IsEng(lettersText[i]))
                         if (isLowerCase)
                         {
                             result += EncryptDecrypt(lettersText[i], Reverse(AlphabetEng), AlphabetEng);

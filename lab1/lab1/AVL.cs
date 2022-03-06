@@ -174,8 +174,16 @@ namespace lab1
             string path=Console.ReadLine();
             if (root == null)
             {
-                File.AppendAllText(path,"Tree is empty");
                 
+                if (path.Length > 0)
+                {
+                    File.AppendAllText(path, "Tree is empty");
+                }
+                else
+                {
+                    Console.WriteLine("Ошибка команды");
+                }
+
                 return;
             }
             arrForPrint = new List<string>();
@@ -185,7 +193,14 @@ namespace lab1
             }
 
             InOrderDisplayTree(root, 0);
-            File.AppendAllText(path, Environment.NewLine);
+            if (path.Length > 0) {
+                File.AppendAllText(path, Environment.NewLine);
+            }
+            else
+            {
+                Console.WriteLine("Ошибка команды");
+            }
+            
 
             for (int i = 0; i < getHeight(root); i++)
             {
@@ -206,11 +221,12 @@ namespace lab1
 
             if (current != null)
             {
-                
+                arrForPrint[currentHeight] += current.data.ToString() + "  ";
                 for (int i = 0; i < currentHeight; i++)
                 {
                     Console.Write("-|");
                 }
+                
                 Console.Write(current.data.ToString());
                 Console.WriteLine();
                 InOrderDisplayTree(current.left, currentHeight + 1);
